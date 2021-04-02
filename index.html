@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0038)https://jxzhanggg.github.io/Seq2SeqVC/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Cross-Lingual-VC</title>
+<style type="text/css">
+</style></head>
+<body>
+<h2><strong>Audio Samples from "Cross-Lingual Many-to-Many Voice Conversion by Disentangling Speaker Characteristics from Speech Content</strong>"</h2>
+
+<h3>Authors: </h3>
+Zhiyuan Zhao, Ruotong Wang, Luoyu Bai, Bai Li, Wan Ding, Dongyan Huang
+<h3>Abstract: </h3>
+  <p>
+    Cross-lingual many-to-many voice conversion (VC) is a challenging task due to the pronunciation error issues and the lack of parallel bilingual dataset. In this paper, we propose a cross-lingual many-to-many voice conversion model, consisting of a VC encoder to extract speech content, a speaker encoder to verify speaker characteristics, and a decoder with attention to synthesize personalized speech. During training process, we employ a self-conversion training strategy to make the attention model more robust for alignment. Then we construct one-to-many training system, which takes parallel TTS synthesized speech and multi-speaker natural speech signals, to disentangle speaker characteristics from speech content, thus reduce pronunciation errors. Finally, based on one-to-many pre-trained model, we explore many-to-many model using VCC 2020 dataset to realize cross-lingual VC, i.e., English, Mandarin, Germany and Finnish. The proposed approach does not need extra labels, parallel bilingual dataset, or auxiliary modules such as Connectionist Temporal Classification (CTC), Automatic Speech Recognition (ASR), and Variational Auto-Encoder (VAE). Our experimental results show the proposed approach significantly improves naturalness and similarity of converted speech , which close to human's voice. 
+  </p>
+<hr>
+  <h5>&nbsp;</h5>
+  
+  <!-- 
+  
+<h3>1. One-to-Many VS Many-to-Many Dataset</h3>
+
+<p>We pick up one sentence from <a href="https://openslr.org/38/">ST-CMDS</a> Dataset for example, meanwhile use TTS model to synthesize a same sentence. Then use these two audios as input for one-to-many and many-to-many models.</p>
+
+<p>Input Sentence: "醉翁之意不在酒" / zui4 weng1 zhi1 yi4 bu2 zai4 jiu3</p>
+
+<table width="793" height="100" border="1">
+  <tr>
+    <td width="140" align="center">Input Audio from ST-CMDS Dataset</td>
+    <td width="140" align="center">Input Audio from TTS Synthesized</td>
+  </tr>
+  <tr>
+    <td><audio src="wavs/one_many/raw_input.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/one_many/TTS_input.wav" controls="controls"> </audio></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table border="1">
+  <tr>
+    <td><div align="center">Target Speaker</div></td>
+    <td colspan="1"> <p align="center">F1</p> </td>
+    <td colspan="1"> <p align="center">M1</p> </td>
+    <td colspan="1"> <p align="center">F2</p> </td>
+    <td colspan="1"> <p align="center">M2</p> </td>
+  </tr>
+  <tr>
+    <td><div align="center">Target Voice</div></td>
+        <td><audio src="wavs/one_many/target_F1.wav" controls="controls"> </audio></td>
+        <td><audio src="wavs/one_many/target_M1.wav" controls="controls"> </audio></td>
+        <td><audio src="wavs/one_many/target_F2.wav" controls="controls"> </audio></td>
+        <td><audio src="wavs/one_many/target_M2.wav" controls="controls"> </audio></td>
+  </tr>
+    <tr>
+    <td><div align="left">One-to-Many + TTS Input (proposed)</div></td>
+        <td><audio src="wavs/one_many/TTS_F1.wav" controls="controls"> </audio></td>
+        <td><audio src="wavs/one_many/TTS_M1.wav" controls="controls"> </audio></td>
+        <td><audio src="wavs/one_many/TTS_F2.wav" controls="controls"> </audio></td>
+        <td><audio src="wavs/one_many/TTS_M2.wav" controls="controls"> </audio></td>
+  </tr>
+      <tr>
+    <td><div align="left">One-to-Many + ST-CMDS Input</div></td>
+        <td><audio src="wavs/one_many/raw_one_F1.wav" controls="controls"> </audio></td>
+        <td><audio src="wavs/one_many/raw_one_M1.wav" controls="controls"> </audio></td>
+        <td><audio src="wavs/one_many/raw_one_F2.wav" controls="controls"> </audio></td>
+        <td><audio src="wavs/one_many/raw_one_M2.wav" controls="controls"> </audio></td>
+  </tr>
+      <tr>
+    <td><div align="left">Many-to-Many + TTS Input</div></td>
+        <td><audio src="wavs/one_many/TTS_many_F1.wav" controls="controls"> </audio></td>
+        <td><audio src="wavs/one_many/TTS_many_M1.wav" controls="controls"> </audio></td>
+        <td><audio src="wavs/one_many/TTS_many_F2.wav" controls="controls"> </audio></td>
+        <td><audio src="wavs/one_many/TTS_many_M2.wav" controls="controls"> </audio></td>
+  </tr>
+    <tr>
+    <td><div align="left">Many-to-Many + ST-CMDS Input</div></td>
+        <td><audio src="wavs/one_many/raw_F1.wav" controls="controls"> </audio></td>
+        <td><audio src="wavs/one_many/raw_M1.wav" controls="controls"> </audio></td>
+        <td><audio src="wavs/one_many/raw_F2.wav" controls="controls"> </audio></td>
+        <td><audio src="wavs/one_many/raw_M2.wav" controls="controls"> </audio></td>
+  </tr>
+</table>
+<h3>&nbsp;</h3>
+<h3>&nbsp;</h3>
+
+-->
+
+<h3>Cross-Lingual Voice Conversion</h3>
+
+<p> There are 4 languages in <a href="http://www.vc-challenge.org/rules.html">VCC2020</a> dataset, we choose one sentence from each language, and synthesize the speech of target speakers. </p>
+<p> In &quot;TEF1&quot;, &quot;T&quot; means Target, &quot;E&quot; means English, &quot;F&quot; means Female, &quot;1&quot; means speaker ID, other speakers are the same.</p>
+
+
+<table border="1">
+  <tr>
+    <td colspan="2"><div align="center">Languages</div></td>
+    <td colspan="1"><p align="center">Engligh</p></td>
+    <td colspan="1"><p align="center">Mandarin</p></td>
+    <td colspan="1"><p align="center">Germany</p></td>
+    <td colspan="1"><p align="center">Finnish</p></td>
+  </tr>
+    <tr>
+    <td width="150" colspan="1"><div align="center">Speakers</div></td>
+    <td colspan="1"><div align="center">Target Voice</div></td>
+    <td><audio src="wavs/multi_lingual/TEF1_E20020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TMF1_M10020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TGF1_G10020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TFF1_F10020.wav" controls="controls"> </audio></td>
+  </tr>
+  <tr>
+    <td><div align="center"><em>TEF2</em></div></td>
+    <td><audio src="wavs/multi_lingual/TEF2_E20020.wav" controls="controls"> </audio></td> 
+    <td><audio src="wavs/multi_lingual/TEF1_TEF2_E20020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TMF1_TEF2_M10020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TGF1_TEF2_G10020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TFF1_TEF2_F10020.wav" controls="controls"> </audio></td>
+  </tr>
+  <tr>
+    <td><div align="center"><em>TEM2</em></div></td>
+    <td><audio src="wavs/multi_lingual/TEM2_E20020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TEF1_TEM2_E20020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TMF1_TEM2_M10020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TGF1_TEM2_G10020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TFF1_TEM2_F10020.wav" controls="controls"> </audio></td>
+  </tr>
+    <tr>
+    <td><div align="center"><em>TMF1</em></div></td>
+    <td><audio src="wavs/multi_lingual/TMF1_M10020.wav" controls="controls"> </audio></td> 
+    <td><audio src="wavs/multi_lingual/TEF1_TMF1_E20020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TMM1_TMF1_M10020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TGF1_TMF1_G10020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TFF1_TMF1_F10020.wav" controls="controls"> </audio></td>
+  </tr>
+  <tr>
+    <td><div align="center"><em>TMM1</em></div></td>
+    <td><audio src="wavs/multi_lingual/TMM1_M10020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TEF1_TMM1_E20020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TMF1_TMM1_M10020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TGF1_TMM1_G10020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TFF1_TMM1_F10020.wav" controls="controls"> </audio></td>
+  </tr>
+  <tr>
+    <td><div align="center"><em>TGF1</em></div></td>
+    <td><audio src="wavs/multi_lingual/TGF1_G10020.wav" controls="controls"> </audio></td> 
+    <td><audio src="wavs/multi_lingual/TEF1_TGF1_E20020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TMM1_TGF1_M10020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TGM1_TGF1_G10020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TFF1_TGF1_F10020.wav" controls="controls"> </audio></td>
+  </tr>
+  <tr>
+    <td><div align="center"><em>TGM1</em></div></td>
+    <td><audio src="wavs/multi_lingual/TGM1_G10020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TEF1_TGM1_E20020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TMF1_TGM1_M10020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TGF1_TGM1_G10020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TFF1_TGM1_F10020.wav" controls="controls"> </audio></td>
+  </tr>
+  <tr>
+    <td><div align="center"><em>TFF1</em></div></td>
+    <td><audio src="wavs/multi_lingual/TFF1_F10020.wav" controls="controls"> </audio></td> 
+    <td><audio src="wavs/multi_lingual/TEF1_TFF1_E20020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TMM1_TFF1_M10020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TGM1_TFF1_G10020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TFM1_TFF1_F10020.wav" controls="controls"> </audio></td>
+  </tr>
+  <tr>
+    <td><div align="center"><em>TFM1</em></div></td>
+    <td><audio src="wavs/multi_lingual/TFM1_F10020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TEF1_TFM1_E20020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TMF1_TFM1_M10020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TGF1_TFM1_G10020.wav" controls="controls"> </audio></td>
+    <td><audio src="wavs/multi_lingual/TFF1_TFM1_F10020.wav" controls="controls"> </audio></td>
+  </tr>
+
+</table>
+
+<h3>&nbsp;</h3>
+<h3>&nbsp;</h3>
+
+</body></html>
