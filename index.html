@@ -1,71 +1,244 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Audio samples of "Improving Model Stability and Training Efficiency in Fast Speed High Quality Expressive Voice Conversion System"</title>
+    <meta charset="UTF-8">
+    <style>
+        red {color: red}
+        audio {width: 250px}
+    </style>
+  </head>
+  <body>
+    <article>
+      <header>
+        <h1>Audio samples of "Improving Model Stability and Training Efficiency in Fast Speed High Quality Expressive Voice Conversion System"</h1>
+      </header>
+    </article>
 
-<title>Multi-Speaker-VC</title>
-<style type="text/css">
-</style></head>
-<body>
-<h2><strong>Audio Samples from "Improving Model Stability and Training Efficiency in  Multi-speaker Voice Conversion with Data Redundancy Reduction</strong>"</h2>
+<!--    <p><b>Paper:</b> <a href="">arXiv</a></p>-->
+<!--    <p><b>Authors</b>: </p>-->
 
-<h3>Authors: </h3>
-Zhiyuan Zhao, Jingjun Liang, Luoyu Bai, Linhuang Yan, Zehong Zheng, Zhiyong Yang, Wan Ding, Dongyan Huang
-<h3>Abstract: </h3>
-  <p>
-The success of the neural network makes it prevalent in speech synthesis. However, there is some deficiency in neural-network-based multi-speaker VC tasks. Specifically, the limitations are the desire for data and computation and pronunciation errors. The current mainstream method of voice conversion is a combination of Automatic Speech Recognition and Text-to-Speech (ASR-TTS). Although it has provided outstanding quality and stability in recent speech synthesis competitions, this approach is susceptible to the performance of ASR, which requires far more data than speech synthesis for training. Considering the restrictions of ASR-TTS, we propose two methods to enhance the stability of our VC system. Firstly, we adopt data redundancy reduction in the training dataset to balance the distribution of vocabulary and avoid uncommon words being ignored during the training process. Our method significantly improves the stability of converted speech, which reduce the WER from 3.44% to 3.02%. Secondly, we construct a one-to-many training system, which takes parallel TTS synthesized speech and multi-speaker natural speech signals, to disentangle speaker characteristics from speech contents for pronunciation error reduction. The experiment result shows that the WER of our system is 2.59% lower than that of the ASR-TTS system.  </p>
-<hr>
-  <h5>&nbsp;</h5>
-  
+    <div>
+      <b>Abstract:</b>
 
-  
-<h3>Performance of multi-speaker voice conversion system</h3>
+      Recently, voice conversion systems (VC) have been made great progress thanks to advanced deep learning methods.
+      Current researches not only pursues high-quality and fast speed of audio synthesis, but also requires richer expressiveness.
+      The most popular VC system was constructed on the concatenation of an automatic speech recognition module with a text-to-speech module (ASR-TTS).
+      However, it suffers from errors of recognition and pronunciation and the requirements of a large amount of data for a pre-trained ASR model.
+      To remedy the above drawbacks, we propose an approach to enhance the model stability and training efficiency of a VC system.
+      Firstly, a data redundancy reduction method is used to balance the distribution of vocabulary for avoiding uncommon words being ignored during the training process,
+      by adding CTC loss, the WER of our system declines to $3.02$, which is $5.63\%$ lower than that of the ASR-TTS system ($8.65\%$),
+      and the inference speed (e.g., real-time rate $19.32$) of our VC system are much faster than those of the baseline (real-time rate $2.24$).
+      Finally, the emotional embedding is added to the pre-trained VC system to generate expressive speech conversion.
+      The results show that after fine-tuning on the multi-emotional dataset, the system can achieve high quality and expressive speech synthesis.
 
-<p>We conduct a Mean Option Score (MOS) test to evaluate the quality of synthesised speech, a male and a female are chosen from the internal dataset as target speakers. We calculate the average score of MOS with 95\% confidence intervals.</p>
+    <p></p>
+    </div>
 
-<!--
-<p>We pick up one sentence from <a href="https://openslr.org/38/">ST-CMDS</a> Dataset for example, meanwhile use TTS model to synthesize a same sentence. Then use these two audios as input for one-to-many and many-to-many models.</p>
 
-<p>&nbsp;</p>
--->
-<table border="1">
-  <tr>
-    <td><div width="600" align="center">Target Speaker</div></td>
-    <td colspan="1"> <p align="center">Sample 1 (Male)</p> </td>
-    <td colspan="1"> <p align="center">Sample 2 (Male)</p> </td>
-    <td colspan="1"> <p align="center">Sample 3 (Female)</p> </td>
-    <td colspan="1"> <p align="center">Sample 4 (Female)</p> </td>
-  </tr>
-  <tr>
-    <td><div align="center">Ground Truth</div></td>
-        <td><audio src="wavs/035247.wav" controls="controls"> </audio></td>
-        <td><audio src="wavs/035138.wav" controls="controls"> </audio></td>
-        <td><audio src="wavs/005268.wav" controls="controls"> </audio></td>
-        <td><audio src="wavs/005175.wav" controls="controls"> </audio></td>
-  </tr>
-    <tr>
-    <td><div width="600" align="center">Parrotron + WaveGAN</div></td>
-        <td><audio src="wavs/035247_vc2_PG.wav" controls="controls"> </audio></td>
-        <td><audio src="wavs/035138_vc2_PG.wav" controls="controls"> </audio></td>
-        <td><audio src="wavs/005268_vc2_PG.wav" controls="controls"> </audio></td>
-        <td><audio src="wavs/005175_vc2_PG.wav" controls="controls"> </audio></td>
-  </tr>
+    <p>&nbsp;</p>
+
+    <div>
+      <a name="e2e"><h2>MOS Test (Neutral)</h2></a>
+      <td colspan="6"><hr></td>
+      <table>
+        <tbody>
+        <tr>
+          <td><div width="600" align="center"></div></td>
+          <td colspan="1"> <p align="center">心动不如行动，我不太擅长卖萌。</p> </td>
+          <td colspan="1"> <p align="center">看着你高兴，我就觉得很幸福啦。</p> </td>
+          <td colspan="1"> <p align="center">被宰后的我简直气愤的不得了！</p> </td>
+          <td colspan="1"> <p align="center">是悲伤的痛苦，是不尽的思念。</p> </td>
+        </tr>
+        <tr>
+          <td nowrap width="160">Ground Truth</td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/GroundTruth/000301.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/GroundTruth/210501.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/GroundTruth/220101.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/GroundTruth/231101.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>Our Proposed<br>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Proposed/norm_norm_000301.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Proposed/norm_happy_210501.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Proposed/norm_angry_220101.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Proposed/norm_sad_231101.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>Kaldi (CVTE M2) + MTTS<br>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Baseline/norm_norm_000301.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Baseline/norm_happy_210501.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Baseline/norm_angry_220101.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Baseline/norm_sad_231101.wav"></audio></td>
+        </tr>
+<!--        <tr>-->
+<!--          <td colspan="6"><hr></td>-->
+<!--        </tr>-->
+        </tbody>
+      </table>
+    </div>
+
+        <div>
+      <a name="e2e"><h2>MOS Test (Happiness)</h2></a>
+      <td colspan="6"><hr></td>
+      <table>
+        <tbody>
+        <tr>
+          <td><div width="600" align="center"></div></td>
+          <td colspan="1"> <p align="center">心动不如行动，我不太擅长卖萌。</p> </td>
+          <td colspan="1"> <p align="center">看着你高兴，我就觉得很幸福啦。</p> </td>
+          <td colspan="1"> <p align="center">被宰后的我简直气愤的不得了！</p> </td>
+          <td colspan="1"> <p align="center">是悲伤的痛苦，是不尽的思念。</p> </td>
+        </tr>
+        <tr>
+          <td nowrap width="160">Ground Truth</td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/GroundTruth/000301.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/GroundTruth/210501.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/GroundTruth/220101.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/GroundTruth/231101.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>Our Proposed<br>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Proposed/happy_norm_000301.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Proposed/happy_happy_210501.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Proposed/happy_angry_220101.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Proposed/happy_sad_231101.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>Kaldi (CVTE M2) + MTTS<br>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Baseline/happy_norm_000301.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Baseline/happy_happy_210501.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Baseline/happy_angry_220101.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Baseline/happy_sad_231101.wav"></audio></td>
+        </tr>
+<!--        <tr>-->
+<!--          <td colspan="6"><hr></td>-->
+<!--        </tr>-->
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <a name="e2e"><h2>MOS Test (Anger)</h2></a>
       <tr>
-    <td><div width="600" align="center">ASR-TTS + World</div></td>
-        <td><audio src="wavs/035247_vc1.wav" controls="controls"> </audio></td>
-        <td><audio src="wavs/035138_vc1.wav" controls="controls"> </audio></td>
-        <td><audio src="wavs/005268_vc1.wav" controls="controls"> </audio></td>
-        <td><audio src="wavs/005175_vc1.wav" controls="controls"> </audio></td>
-  </tr>
-      <tr>
-    <td><div width="600" align="center">Proposed + WaveGAN</div></td>
-        <td><audio src="wavs/035247_vc2_FG.wav" controls="controls"> </audio></td>
-        <td><audio src="wavs/035138_vc2_FG.wav" controls="controls"> </audio></td>
-        <td><audio src="wavs/005268_vc2_FG.wav" controls="controls"> </audio></td>
-        <td><audio src="wavs/005175_vc2_FG.wav" controls="controls"> </audio></td>
-  </tr>
+          <td colspan="6"><hr></td>
+        </tr>
+      <table>
+        <tbody>
+        <tr>
+          <td><div width="600" align="center"></div></td>
+          <td colspan="1"> <p align="center">心动不如行动，我不太擅长卖萌。</p> </td>
+          <td colspan="1"> <p align="center">看着你高兴，我就觉得很幸福啦。</p> </td>
+          <td colspan="1"> <p align="center">被宰后的我简直气愤的不得了！</p> </td>
+          <td colspan="1"> <p align="center">是悲伤的痛苦，是不尽的思念。</p> </td>
+        </tr>
+        <tr>
+          <td nowrap width="160">Ground Truth</td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/GroundTruth/000301.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/GroundTruth/210501.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/GroundTruth/220101.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/GroundTruth/231101.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>Our Proposed<br>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Proposed/angry_norm_000301.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Proposed/angry_happy_210501.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Proposed/angry_angry_220101.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Proposed/angry_sad_231101.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>Kaldi (CVTE M2) + MTTS<br>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Baseline/angry_norm_000301.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Baseline/angry_happy_210501.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Baseline/angry_angry_220101.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Baseline/angry_sad_231101.wav"></audio></td>
+        </tr>
+<!--        <tr>-->
+<!--          <td colspan="6"><hr></td>-->
+<!--        </tr>-->
+        </tbody>
+      </table>
+    </div>
 
-</table>
-<h3>&nbsp;</h3>
-<h3>&nbsp;</h3>
 
-</body></html>
+    <div>
+      <a name="e2e"><h2>MOS Test (Sadness)</h2></a>
+      <td colspan="6"><hr></td>
+      <table>
+        <tbody>
+        <tr>
+          <td><div width="600" align="center"></div></td>
+          <td colspan="1"> <p align="center">心动不如行动，我不太擅长卖萌。</p> </td>
+          <td colspan="1"> <p align="center">看着你高兴，我就觉得很幸福啦。</p> </td>
+          <td colspan="1"> <p align="center">被宰后的我简直气愤的不得了！</p> </td>
+          <td colspan="1"> <p align="center">是悲伤的痛苦，是不尽的思念。</p> </td>
+        </tr>
+        <tr>
+          <td nowrap width="160">Ground Truth</td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/GroundTruth/000301.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/GroundTruth/210501.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/GroundTruth/220101.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/GroundTruth/231101.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>Our Proposed<br>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Proposed/sad_norm_000301.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Proposed/sad_happy_210501.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Proposed/sad_angry_220101.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Proposed/sad_sad_231101.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>Kaldi (CVTE M2) + MTTS<br>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Baseline/sad_norm_000301.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Baseline/sad_happy_210501.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Baseline/sad_angry_220101.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/MOS/Baseline/sad_sad_231101.wav"></audio></td>
+        </tr>
+<!--        <tr>-->
+<!--          <td colspan="6"><hr></td>-->
+<!--        </tr>-->
+        </tbody>
+      </table>
+    </div>
 
+    <br><br>
+    <div>
+      <a name="as"><h2>Ablation Study (CTC)</h2></a>
+      <td colspan="6"><hr></td>
+      <table>
+        <tbody>
+        <tr>
+          <td><div width="600" align="center"></div></td>
+          <td colspan="1"> <p align="center">(Anger)<br>差不多，都是娱乐行业。</p> </td>
+          <td colspan="1"> <p align="center">(Happiness)<br>所有的苦难都源于我是一个吃货。</p> </td>
+          <td colspan="1"> <p align="center">(Neutral)<br>福建表叔厅长来了。</p> </td>
+          <td colspan="1"> <p align="center">(Sadness)<br>我只想说有需求就有市场。</p> </td>
+        </tr>
+        <tr>
+          <td nowrap width="198">Our Proposed (with CTC)</td>
+          <td><audio controls="" preload="none"><source src="wavs/CTC/withCTC/angry0106.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/CTC/withCTC/happy0191.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/CTC/withCTC/norm0217.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/CTC/withCTC/sad0300.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap width="198">Our Proposed (without CTC)</td>
+          <td><audio controls="" preload="none"><source src="wavs/CTC/withoutCTC/angry0106.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/CTC/withoutCTC/happy0191.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/CTC/withoutCTC/norm0217.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/CTC/withoutCTC/sad0300.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap width="198">Kaldi (CVTE M2) + MTTS</td>
+          <td><audio controls="" preload="none"><source src="wavs/CTC/baseline/angry0106.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/CTC/baseline/happy0191.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/CTC/baseline/norm0217.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/CTC/baseline/sad0300.wav"></audio></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <br><br>
+  </body>
+</html>
