@@ -40,7 +40,7 @@
     <p>&nbsp;</p>
 
     <div>
-      <a name="e2e"><h2>MOS Test (Neutral)</h2></a>
+      <a name="mosN"><h2>MOS Test (Neutral)</h2></a>
       <td colspan="6"><hr></td>
       <table>
         <tbody>
@@ -80,7 +80,7 @@
     </div>
 
         <div>
-      <a name="e2e"><h2>MOS Test (Happiness)</h2></a>
+      <a name="mosH"><h2>MOS Test (Happiness)</h2></a>
       <td colspan="6"><hr></td>
       <table>
         <tbody>
@@ -120,7 +120,7 @@
     </div>
 
     <div>
-      <a name="e2e"><h2>MOS Test (Anger)</h2></a>
+      <a name="mosA"><h2>MOS Test (Anger)</h2></a>
       <tr>
           <td colspan="6"><hr></td>
         </tr>
@@ -163,7 +163,7 @@
 
 
     <div>
-      <a name="e2e"><h2>MOS Test (Sadness)</h2></a>
+      <a name="mosS"><h2>MOS Test (Sadness)</h2></a>
       <td colspan="6"><hr></td>
       <table>
         <tbody>
@@ -204,7 +204,7 @@
 
     <br><br>
     <div>
-      <a name="as"><h2>Ablation Study (CTC)</h2></a>
+      <a name="ctc"><h2>Ablation Study (CTC)</h2></a>
       <td colspan="6"><hr></td>
       <table>
         <tbody>
@@ -240,5 +240,68 @@
       </table>
     </div>
     <br><br>
+
+      <div>
+      <a name="app"><h2>Applications</h2></a>
+      <td  width="300"><hr></td>
+      <table>
+        <tbody>
+        <a name="cl"><h3>Few-Shot Cross Lingual Voice Conversion (5min)</h3></a>
+        <tr>
+          <td><div width="300" align="center"></div></td>
+          <td width="300"> <p align="center"><b>Source Utterance</b><br>音像产业非常重要。</p> </td>
+          <td width="300"> <p align="center"><b>Source Content</b><br>There are many examples of this in France.</p> </td>
+          <td width="300"> <p align="center"><b>Synthesised Utterance</b><br>There are many examples of this in France.</p> </td>
+        </tr>
+        <tr>
+          <td><div width="300" align="center">Female (ZH)</div></td>
+          <td><div width="300" align="center"><audio controls="" preload="none"><source src="wavs/FewShot/CrossLingual/HDY_M10003.wav"></audio></div></td>
+          <td><div width="300" align="center"><audio controls="" preload="none"><source src="wavs/FewShot/CrossLingual/TTS_trans_E10052.wav"></audio></div></td>
+          <td><div width="300" align="center"><audio controls="" preload="none"><source src="wavs/FewShot/CrossLingual/HDY_E10052_hifiGAN.wav"></audio></div></td>
+        </tr>
+        <tr>
+          <td><div width="300" align="center">Male (ZH)</div></td>
+          <td><div width="300" align="center"><audio controls="" preload="none"><source src="wavs/FewShot/CrossLingual/XYJ_M10003.wav"></audio></div></td>
+          <td><div width="300" align="center"><audio controls="" preload="none"><source src="wavs/FewShot/CrossLingual/TTS_trans_E10052.wav"></audio></div></td>
+          <td><div width="300" align="center"><audio controls="" preload="none"><source src="wavs/FewShot/CrossLingual/XYJ_E10052_hifiGAN.wav"></audio></div></td>
+        </tr>
+          </tbody>
+        </table>
+        <table>
+        <tbody>
+        <a name="fg"><h3>Fine-Grained Prosody Control (5min)</h3></a>
+        <tr>
+          <td><div width="300" align="center"></div></td>
+          <td width="400"> <p align="center"><b>Source Emotion (Neutral)</b><br>大苹果，喜欢我，我爱吃，大苹果。</p> </td>
+          <td width="400"> <p align="center"><b>Source Emotion (Expressive)</b><br>大苹果，喜欢我，我爱吃，大苹果。</p> </td>
+        </tr>
+        <tr>
+          <td><div width="300" align="center">Target Speaker (ZH)</div></td>
+          <td><div width="400" align="center"><audio controls="" preload="none"><source src="wavs/FewShot/FineGrained/WRT_norm_GT_2630_2632_00006.wav"></audio></div></td>
+          <td><div width="400" align="center"><audio controls="" preload="none"><source src="wavs/FewShot/FineGrained/WRT_emo_GT_2630_2632_00006.wav"></audio></div></td>
+        </tr>
+        </tbody>
+        </table>
+
+        <table>
+        <tbody>
+        <tr>
+          <td><div align="center"></div></td>
+          <td width="300"> <p align="center"><b>Synthesised Emotion (Level 0)</b></p> </td>
+          <td width="300"> <p align="center"><b>Synthesised Emotion (Level 1)</b></p> </td>
+          <td width="300"> <p align="center"><b>Synthesised Emotion (Level 2)</b></p> </td>
+        </tr>
+        <tr>
+          <td><div align="center">Synthesised Audios</div></td>
+          <td><div width="300" align="center"><audio controls="" preload="none"><source src="wavs/FewShot/FineGrained/WRT_norm_TTS_M_2630_2632_00006.wav"></audio></div></td>
+          <td><div width="300" align="center"><audio controls="" preload="none"><source src="wavs/FewShot/FineGrained/WRT_mid_TTS_M_2630_2632_00006.wav"></audio></div></td>
+          <td><div width="300" align="center"><audio controls="" preload="none"><source src="wavs/FewShot/FineGrained/WRT_emo_TTS_M_2630_2632_00006.wav"></audio></div></td>
+        </tr>
+        </tbody>
+        </table>
+    </div>
+    <br><br>
+
+
   </body>
 </html>
